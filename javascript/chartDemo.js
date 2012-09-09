@@ -14,8 +14,8 @@
 				DragOptions : { cursor: "pointer", zIndex:2000 },
 				PaintStyle : { strokeStyle:color, lineWidth:2 },
 				EndpointStyle : { radius:9, fillStyle:color },
-				HoverPaintStyle : {strokeStyle:"#ec9f2e" },
-				EndpointHoverStyle : {fillStyle:"#ec9f2e" },			
+				//HoverPaintStyle : {strokeStyle:"#ec9f2e" },
+				//EndpointHoverStyle : {fillStyle:"#ec9f2e" },			
 				Anchors :  [ "BottomCenter", "TopCenter" ]
 			});
 			
