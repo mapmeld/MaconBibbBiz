@@ -1,0 +1,29 @@
+.window { 
+	border:0.1em dotted #d4e06b; 
+	opacity:0.8; 
+	filter:alpha(opacity=80);
+	width:24em;
+	z-index:20; 
+	position:absolute; 
+	color:black;
+	font-family:helvetica, sans;
+	padding-top:0.9em; 
+	font-size:0.9em;
+	text-align:center;
+	background-color:white;
+}
+.window p{
+    text-align: left;
+    padding: 0px 10px;
+}
+#startpoint { left:25em;}
+#homebased { left:5em;top:15em;}
+#homebasedbeautybarber { left:20em;top:30em;}
+#homebasedzoningcompliance { left:5em;top:40em;}
+#getfinallicense { left:25em;top:53em;}
+#grandopening { left:25em;top:70em;}
+
+#commercialbusiness{left:55em;top:15em;}
+#zoningvariance{left:45em;top:25em;}
+#foodandbeverage{left:68em;top:35em;}
+#getfinallicense2{left:55em;top:53em;}
