@@ -1,20 +1,25 @@
 .window { 
-	border:0.1em dotted #d4e06b; 
-	opacity:0.8; 
-	filter:alpha(opacity=80);
-	width:24em;
-	z-index:20; 
-	position:absolute; 
-	color:black;
-	font-family:helvetica, sans;
-	padding-top:0.9em; 
-	font-size:0.9em;
-	text-align:center;
-	background-color:white;
+  border:0.1em dotted #d4e06b; 
+  opacity:0.8; 
+  filter:alpha(opacity=80);
+  width:24em;
+  z-index:20; 
+  position:absolute; 
+  color:black;
+  font-family:helvetica, sans;
+  padding-top:0.9em; 
+  font-size:0.9em;
+  text-align:center;
+  background-color:white;
 }
 .window p{
     text-align: left;
     padding: 0px 10px;
+}
+.roadnottaken{
+  opacity:0.3;
+  filter:alpha(opacity=30);
+  color: #777;
 }
 #startpoint { left:25em;}
 #homebased { left:5em;top:15em;}
