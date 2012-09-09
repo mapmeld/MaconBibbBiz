@@ -3,62 +3,132 @@
   <head>
     <title>Business Licensing</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" href="css/jsPlumbDemo.css">
-    <link rel="stylesheet" href="css/chartDemo.css">
+    <link type="text/css" rel="stylesheet" href="css/jsPlumbDemo.css">
+    <link type="text/css" rel="stylesheet" href="css/chartDemo.css">
+    <link type="text/css" rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
     <script type='text/javascript' src='javascript/jquery.min.js'></script>
     <script type='text/javascript' src='javascript/jquery-ui.min.js'></script>
     <script type='text/javascript' src='javascript/jquery.jsPlumb-1.3.13-all-min.js'></script>
     <script type="text/javascript" src="javascript/chartDemo.js"></script>
     <script type="text/javascript" src="javascript/demo-list.js"></script>
     <script type="text/javascript" src="javascript/demo-helper-jquery.js"></script>
+    <script type="text/javascript">
+function confirmHomeOcc(){
+  $("#homebased .btn").css({ display: "none" });
+}
+function switchToMain(){
+  $(".roadnottaken").removeClass("roadnottaken");
+  $(".homeocc").addClass("roadnottaken");
+  $(".homeocc .btn").css({ display: "none" });
+}
+function confirmFood(){
+  $(".food .btn").css({ display: "none" });
+}
+function noFood(){
+  $(".food").addClass("roadnottaken");
+  $(".food .btn").css({ display: "none" });
+}
+    </script>
   </head>
   <body data-demo-id="chartDemo" data-library="jquery">
     <div id="demo">
       <div class="window" id="startpoint">
-        <h3>Welcome!</h3>
+        <h4>Welcome!</h4>
         <p>Sign up at MaconBibb.biz to let people know you're starting a business.</p>
-        <p>Print and complete a <b>Zoning Compliance Form</b> from <b>Planning &amp; Zoning</b>.</p>
-        <p>Print and complete an <b>Occupational Tax Form</b> from <b>City of Macon Finance Department</b>.</p>
+        <p>Take notes on paper as you go through the process.</p>
       </div>
-      <div class="window" id="homebased">
-        <h3>Home-Based Business</h3>
-        <p>Any at-home business.</p>
-        <p>If the applicant's name does not appear on the property card, written permission from the owner of record must be presented to <b>Planning &amp; Zoning</b>.</p>
+      <div class="window homeocc" id="homebased">
+        <h4>Home-Based Business</h4>
+        <p>
+          At-home business where no customers or employees come to your house.
+          <br/>
+          <a class="btn btn-success" href="#" onclick="confirmHomeOcc()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
+          <a class="btn btn-danger" href="#" onclick="switchToMain()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>
+        </p>
+        <p>If the applicant's name does not appear on the property card, written permission from the owner of record must be granted.</p>
       </div>
-      <div class="window" id="homebasedbeautybarber">
-        <h3>1-Chair Beauty and Barber Shops</h3>
-        <p>Obtain a release from the <b>Macon Water Authority</b>.</p>
+      <div class="window homeocc food" id="homebasedbeautybarber">
+        <h4>Food Production?</h4>
+        <p>
+          <a class="btn btn-success" href="#" onclick="confirmFood()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
+          <a class="btn btn-danger" href="#" onclick="noFood()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>
+        </p>
+        <p>Get an inspection from the
+          <b>
+          <a href="http://northcentralhealthdistrict.com/dept.asp?id=2">
+            Bibb County Health Department
+          </a>
+          </b>.
+        </p>
       </div>
-      <div class="window" id="homebasedzoningcompliance">
-        <h3>Return to Planning &amp; Zoning</h3>
-        <p>File your <b>Zoning Compliance Form</b> and <b>permit</b>. Continue when both are approved by <b>Planning &amp; Zoning</b></p>
+      <div class="window homeocc" id="homebasedzoningcompliance">
+        <h4>Go to the Planning &amp; Zoning Commission</h4>
+        <p>File your
+          <b>
+          <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Home_Occupation_1.pdf">
+            Home Occupation Application (PDF)
+          </a>
+          </b> and any other forms with the
+          <b>
+          <a href="http://www.maconbibbpz.org">
+            Planning &amp; Zoning Commission.
+          </a>
+          </b>
+        </p>
       </div>
-      <div class="window" id="getfinallicense">
-        <h3>Business Licensing Department</h3>
-        <p>File <b>Occupational Tax Form</b> and completed inspection reports with the <b>City of Macon Finance Department</b>. Attach an approved <b>Zoning Compliance Form</b> and any additional license for your business.</p>
+      <div class="window homeocc" id="getfinallicense">
+        <h4>Business Licensing Department</h4>
+        <p>Check if any
+          <b>
+          <a href="http://cityofmacon.net/finance-biz-license-fees">
+            City License Fees
+          </a>
+          </b>
+          apply to your business.
+        </p>
+        <p>Print and complete an
+          <b>
+          <a href="http://cityofmacon.net/sites/default/files/Finance/occupationtaxreturnform_doc_29670.doc">
+            Occupational Tax Form (DOC)
+          </a>
+          </b>.
+          Submit it with all forms to <b>
+          <a href="http://cityofmacon.net/ecdbbi-gts">
+            City of Macon Finance Department
+          </a>
+          </b>.
+        </p>
       </div>
       <div class="window" id="grandopening">
-        <h3>Grand Opening!</h3>
+        <h4>Grand Opening!</h4>
         <p>Upon approval from <b>City of Macon Finance Department</b>, you may officially open your doors!</p>
+        <p>Write a reminder to apply for a business license again next year.</p>
       </div>
       
       <div class="window roadnottaken" id="commercialbusiness">
-        <h3>Commercial Business</h3>
-        <p>File a <b>Zoning Compliance Form</b> with <b>Planning &amp; Zoning</b></p>
+        <h4>Commercial Business</h4>
+        <p>File a
+          <b>
+          <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Commercial_Industrial_or_Institutional_Use__1.pdf">
+            Zoning Compliance Form
+          </a>
+          </b>
+          with the <b>Planning &amp; Zoning Commission</b>
+        </p>
       </div>
-      <div class="window roadnottaken" id="zoningvariance">
-        <h3>Zoning Variance</h3>
+      <div class="window roadnottaken variance" id="zoningvariance">
+        <h4>Zoning Variance</h4>
         <p>If your application requires the Planning &amp; Zoning Commission's approval, pay a fee and get placed on the Commission's agenda.</p>
       </div>
-      <div class="window roadnottaken" id="foodandbeverage">
-        <h3>Food &amp; Beverage Service</h3>
+      <div class="window food roadnottaken" id="foodandbeverage">
+        <h4>Food &amp; Beverage Service</h4>
         <strong>Schedule Inspections</strong>
         <br/>
         <p>Macon Water Authority</p>
         <p>Bibb County Health Department</p>
       </div>
       <div class="window roadnottaken" id="getfinallicense2">
-        <h3>Business Licensing Department</h3>
+        <h4>Business Licensing Department</h4>
         <p>File <b>Occupational Tax Form</b> and completed inspection reports with the <b>City of Macon Finance Department</b>. Attach an approved <b>Zoning Compliance Form</b> and any additional license for your business.</p>
       </div>
       
