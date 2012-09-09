@@ -37,10 +37,16 @@
 			jsPlumb.connect({source:"startpoint", target:"commercialbusiness", overlays:overlays, detachable:false});
 			jsPlumb.connect({source:"commercialbusiness", target:"zoningvariance", overlays:overlays, detachable:false});
 			jsPlumb.connect({source:"commercialbusiness", target:"foodandbeverage", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"commercialbusiness", target:"getfinallicense2", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"zoningvariance", target:"getfinallicense2", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"foodandbeverage", target:"getfinallicense2", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"getfinallicense2", target:"grandopening", overlays:overlays, detachable:false});
+			jsPlumb.connect({source:"commercialbusiness", target:"septictank", overlays:overlays, detachable:false});
+			jsPlumb.connect({source:"septictank", target:"returntopz", overlays:overlays, detachable:false});
+
+			jsPlumb.connect({source:"commercialbusiness", target:"returntopz", overlays:overlays, detachable:false});
+			jsPlumb.connect({source:"zoningvariance", target:"returntopz", overlays:overlays, detachable:false});
+			jsPlumb.connect({source:"foodandbeverage", target:"returntopz", overlays:overlays, detachable:false});
+			jsPlumb.connect({source:"foodandbeverage", target:"returntopz", overlays:overlays, detachable:false});
+			jsPlumb.connect({source:"returntopz", target:"getfinallicense", overlays:overlays, detachable:false});
+
+			jsPlumb.connect({source:"getbizlicense2", target:"grandopening", overlays:overlays, detachable:false});
 			
 			//jsPlumb.draggable(jsPlumb.getSelector(".window"));
 		}

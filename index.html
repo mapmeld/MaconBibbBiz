@@ -32,6 +32,12 @@ function confirmVariance(){
 function noVariance(){
   $(".variance").addClass("roadnottaken");
 }
+function confirmSeptic(){
+  $(".septic .btn").css({ display: "none" });
+}
+function noSeptic(){
+  $(".septic").addClass("roadnottaken");
+}
     </script>
   </head>
   <body data-demo-id="chartDemo" data-library="jquery">
@@ -66,7 +72,7 @@ function noVariance(){
         </p>
       </div>
       <div class="window homeocc" id="homebasedzoningcompliance">
-        <h4>Go to the Planning &amp; Zoning Commission</h4>
+        <h4>Planning &amp; Zoning Commission</h4>
         <p>File your
           <b>
           <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Home_Occupation_1.pdf">
@@ -80,9 +86,15 @@ function noVariance(){
           </b>
         </p>
       </div>
-      <div class="window homeocc" id="getfinallicense">
+      <div class="window" id="getfinallicense">
         <h4>Business Licensing Department</h4>
         <p>Check if any
+          <b>
+          <a href="http://cityofmacon.net/finance-biz-licensetypes">
+            City Licenses
+          </a>
+          </b>
+          and / or
           <b>
           <a href="http://cityofmacon.net/finance-biz-license-fees">
             City License Fees
@@ -111,14 +123,8 @@ function noVariance(){
       
       <div class="window roadnottaken" id="commercialbusiness">
         <h4>Commercial Business</h4>
-        <p>File a
-          <b>
-          <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Commercial_Industrial_or_Institutional_Use__1.pdf">
-            Zoning Compliance Form
-          </a>
-          </b>
-          with the <b>Planning &amp; Zoning Commission</b>
-        </p>
+        <p>Schedule building inspection</p>
+        <p>Schedule fire inspection</p>
       </div>
       <div class="window roadnottaken variance" id="zoningvariance">
         <h4>Zoning Variance?</h4>
@@ -127,6 +133,15 @@ function noVariance(){
           <br/>
           <a class="btn btn-success" href="#" onclick="confirmVariance()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
           <a class="btn btn-danger" href="#" onclick="noVariance()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>          
+        </p>
+      </div>
+      <div class="window roadnottaken septic" id="septictank">
+        <h4>Septic Tank?</h4>
+        <p>
+          If you have a septic tank, you need approval from the Bibb County Health Department.
+          <br/>
+          <a class="btn btn-success" href="#" onclick="confirmSeptic()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
+          <a class="btn btn-danger" href="#" onclick="noSeptic()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>          
         </p>
       </div>
       <div class="window food roadnottaken" id="foodandbeverage">
@@ -140,27 +155,20 @@ function noVariance(){
         <p>Macon Water Authority</p>
         <p>Bibb County Health Department</p>
       </div>
-      <div class="window roadnottaken" id="getfinallicense2">
-        <h4>Business Licensing Department</h4>
-        <p>Check if any
+      <div class="window roadnottaken" id="returntopz">
+        <h4>Planning & Zoning Commission</h4>
+        <p>Submit all inspection reports and forms with a
           <b>
-          <a href="http://cityofmacon.net/finance-biz-license-fees">
-            City License Fees
+          <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Commercial_Industrial_or_Institutional_Use__1.pdf">
+            Zoning Compliance Form
           </a>
           </b>
-          apply to your business.
-        </p>
-        <p>Print and complete an
+          to the
           <b>
-          <a href="http://cityofmacon.net/sites/default/files/Finance/occupationtaxreturnform_doc_29670.doc">
-            Occupational Tax Form (DOC)
+          <a href="http://www.maconbibbpz.org">
+            Planning &amp; Zoning Commission.
           </a>
-          </b>.
-          Submit it with all forms to <b>
-          <a href="http://cityofmacon.net/ecdbbi-gts">
-            City of Macon Finance Department
-          </a>
-          </b>.
+          </b>
         </p>
       </div>
     </div>
