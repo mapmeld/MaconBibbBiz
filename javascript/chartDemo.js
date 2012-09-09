@@ -9,7 +9,8 @@
 			jsPlumb.importDefaults({
 				// notice the 'curviness' argument to this Bezier curve.  the curves on this page are far smoother
 				// than the curves on the first demo, which use the default curviness value.			
-				Connector : [ "Bezier", { curviness:30 } ],
+				//Connector : [ "Bezier", { curviness:30 } ],
+				Connector : [ "StateMachine", { stub:30, gap: 0 } ],
 				DragOptions : { cursor: "pointer", zIndex:2000 },
 				PaintStyle : { strokeStyle:color, lineWidth:2 },
 				EndpointStyle : { radius:9, fillStyle:color },

@@ -22,14 +22,20 @@
   filter:alpha(opacity=30);
   color: #777;
 }
+.roadnottaken .btn-danger{
+  display: none;
+}
+.roadnottaken .btn-success{
+  display: none;
+}
 #startpoint { left:25em;}
-#homebased { left:5em;top:14em;}
-#homebasedbeautybarber { left:20em;top:30em;}
-#homebasedzoningcompliance { left:5em;top:40em;}
-#getfinallicense { left:25em;top:53em;}
-#grandopening { left:25em;top:70em;}
+#homebased { left:5em;top:16em;}
+#homebasedbeautybarber { left:20em;top:36em;}
+#homebasedzoningcompliance { left:5em;top:53em;}
+#getfinallicense { left:20em;top:70em;}
+#grandopening { left:25em;top:90em;}
 
-#commercialbusiness{left:55em;top:14em;}
-#zoningvariance{left:45em;top:25em;}
-#foodandbeverage{left:68em;top:35em;}
-#getfinallicense2{left:55em;top:53em;}
+#commercialbusiness{left:55em;top:16em;}
+#zoningvariance{left:45em;top:27em;}
+#foodandbeverage{left:68em;top:42em;}
+#getfinallicense2{left:55em;top:58em;}

@@ -19,14 +19,18 @@ function confirmHomeOcc(){
 function switchToMain(){
   $(".roadnottaken").removeClass("roadnottaken");
   $(".homeocc").addClass("roadnottaken");
-  $(".homeocc .btn").css({ display: "none" });
 }
 function confirmFood(){
   $(".food .btn").css({ display: "none" });
 }
 function noFood(){
   $(".food").addClass("roadnottaken");
-  $(".food .btn").css({ display: "none" });
+}
+function confirmVariance(){
+  $(".variance .btn").css({ display: "none" });
+}
+function noVariance(){
+  $(".variance").addClass("roadnottaken");
 }
     </script>
   </head>
@@ -117,11 +121,20 @@ function noFood(){
         </p>
       </div>
       <div class="window roadnottaken variance" id="zoningvariance">
-        <h4>Zoning Variance</h4>
-        <p>If your application requires the Planning &amp; Zoning Commission's approval, pay a fee and get placed on the Commission's agenda.</p>
+        <h4>Zoning Variance?</h4>
+        <p>
+          If your application requires the Planning &amp; Zoning Commission to approve a zoning variance, pay a fee and get placed on the Commission's agenda.
+          <br/>
+          <a class="btn btn-success" href="#" onclick="confirmVariance()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
+          <a class="btn btn-danger" href="#" onclick="noVariance()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>          
+        </p>
       </div>
       <div class="window food roadnottaken" id="foodandbeverage">
-        <h4>Food &amp; Beverage Service</h4>
+        <h4>Food &amp; Beverage Service?</h4>
+        <p>
+          <a class="btn btn-success" href="#" onclick="confirmFood()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
+          <a class="btn btn-danger" href="#" onclick="noFood()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>
+        </p>
         <strong>Schedule Inspections</strong>
         <br/>
         <p>Macon Water Authority</p>
@@ -129,9 +142,27 @@ function noFood(){
       </div>
       <div class="window roadnottaken" id="getfinallicense2">
         <h4>Business Licensing Department</h4>
-        <p>File <b>Occupational Tax Form</b> and completed inspection reports with the <b>City of Macon Finance Department</b>. Attach an approved <b>Zoning Compliance Form</b> and any additional license for your business.</p>
+        <p>Check if any
+          <b>
+          <a href="http://cityofmacon.net/finance-biz-license-fees">
+            City License Fees
+          </a>
+          </b>
+          apply to your business.
+        </p>
+        <p>Print and complete an
+          <b>
+          <a href="http://cityofmacon.net/sites/default/files/Finance/occupationtaxreturnform_doc_29670.doc">
+            Occupational Tax Form (DOC)
+          </a>
+          </b>.
+          Submit it with all forms to <b>
+          <a href="http://cityofmacon.net/ecdbbi-gts">
+            City of Macon Finance Department
+          </a>
+          </b>.
+        </p>
       </div>
-      
     </div>
   </body>
 </html>
