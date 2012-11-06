@@ -21,8 +21,11 @@
   text-align: left;
 }
 .roadnottaken{
-  opacity:0.3;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"
   filter:alpha(opacity=30);
+  -webkit-opacity: 0.3;
+  -moz-opacity: 0.3;
+  opacity:0.3;
   color: #777;
 }
 .roadnottaken .btn-danger{

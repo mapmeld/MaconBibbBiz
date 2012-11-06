@@ -13,6 +13,8 @@
     <script type="text/javascript">
 function repaintConns(){
   $.each(connections, function(cnct){
+    connections[cnct].endpoints[0].repaint();
+    connections[cnct].endpoints[1].repaint();    
     connections[cnct].repaint();
   });
 }
@@ -29,6 +31,7 @@ function switchToMain(){
 }
 function confirmFood(){
   $(".food .btn").css({ display: "none" });
+  highlightPath( connections[ "homebasedfood-homebasedzoningcompliance" ] );	
   repaintConns();
 }
 function noFood(){
