@@ -1,55 +1,101 @@
-;(function() {
-	
-	window.jsPlumbDemo = {
-			
-		init : function() {			
+function init(){
+  var color = "gray";
+  jsPlumb.importDefaults({
+	Connector : [ "StateMachine", { stub:30, gap: 0 } ],
+	DragOptions : { cursor: "pointer", zIndex:2000 },
+	PaintStyle : { strokeStyle:color, lineWidth:2 },
+	EndpointStyle : { radius:9, fillStyle:color },
+	HoverPaintStyle : {strokeStyle:"#ec9f2e" },
+	//EndpointHoverStyle : {fillStyle:"#ec9f2e" },			
+	Anchors :  [ "BottomCenter", "TopCenter" ]
+  });
+		
+  var decisionTree = {
+    "startpoint": [
+	  {
+		"homebased": [
+		  {
+			"homebasedfood": [ "homebasedzoningcompliance" ]
+		  },
+		  {
+			"homebasedzoningcompliance": [ "getfinallicense" ]
+		  }
+		]
+	  },
+	  {
+		"commercialbusiness": [
+		  {
+			"zoningvariance": [ "returntopz" ]
+		  },
+		  {
+			"foodandbeverage": [ "returntopz" ]
+		  },
+		  {
+			"septictank": [ "returntopz" ]
+		  },
+		  {
+			"returntopz": [
+			  {
+			    "getfinallicense": [ "grandopening" ]
+			  }
+			]
+		  }
+		]
+	  }
+	]
+  };
 
-			var color = "gray";
+  treeConnect(decisionTree);
+  highlightPath( connections[ "startpoint-homebased" ] );			
+}
 
-			jsPlumb.importDefaults({
-				// notice the 'curviness' argument to this Bezier curve.  the curves on this page are far smoother
-				// than the curves on the first demo, which use the default curviness value.			
-				//Connector : [ "Bezier", { curviness:30 } ],
-				Connector : [ "StateMachine", { stub:30, gap: 0 } ],
-				DragOptions : { cursor: "pointer", zIndex:2000 },
-				PaintStyle : { strokeStyle:color, lineWidth:2 },
-				EndpointStyle : { radius:9, fillStyle:color },
-				//HoverPaintStyle : {strokeStyle:"#ec9f2e" },
-				//EndpointHoverStyle : {fillStyle:"#ec9f2e" },			
-				Anchors :  [ "BottomCenter", "TopCenter" ]
-			});
-			
-				
-			// declare some common values:
-			var arrowCommon = { foldback:0.7, fillStyle:color, width:14 },
-				// use three-arg spec to create two different arrows with the common values:
-				overlays = [
+var isHighlighted = null;
+function highlightPath(connector){
+  if(isHighlighted){
+	isHighlighted.setPaintStyle({ strokeStyle: color, lineWidth: 2 });
+  }
+  isHighlighted = connector;
+  connector.setPaintStyle({ strokeStyle: "orange", lineWidth: 2 });
+  //connector.setPaintStyle({ fillStyle: "orange", strokeStyle: "red", lineWidth: 2 });
+  //connector.endpoints[1].setPaintStyle({ fillStyle: "orange", strokeStyle: "red", lineWidth: 2 });
+}
+
+var connections = { };
+var color = "gray";
+
+			var arrowCommon = { foldback:0.7, fillStyle:color, width:14 };
+				var overlays = [
 					[ "Arrow", { location:0.5 }, arrowCommon ]
 				];
-		
-			jsPlumb.connect({source:"startpoint", target:"homebased", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"homebased", target:"homebasedzoningcompliance", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"homebased", target:"homebasedbeautybarber", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"homebasedbeautybarber", target:"homebasedzoningcompliance", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"homebasedzoningcompliance", target:"getfinallicense", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"getfinallicense", target:"grandopening", overlays:overlays, detachable:false});
 
-			jsPlumb.connect({source:"startpoint", target:"commercialbusiness", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"commercialbusiness", target:"zoningvariance", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"commercialbusiness", target:"foodandbeverage", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"commercialbusiness", target:"septictank", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"septictank", target:"returntopz", overlays:overlays, detachable:false});
+function treeConnect(tree){
 
-			jsPlumb.connect({source:"commercialbusiness", target:"returntopz", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"zoningvariance", target:"returntopz", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"foodandbeverage", target:"returntopz", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"foodandbeverage", target:"returntopz", overlays:overlays, detachable:false});
-			jsPlumb.connect({source:"returntopz", target:"getfinallicense", overlays:overlays, detachable:false});
+  $.each(tree, function(branchname){
+    var branch = tree[branchname];
+	for(var nb=0;nb<branch.length;nb++){
+	  if(typeof branch[nb] === "string"){
+		// this path in the tree does not continue defining links
+		connections[ branchname + "-" + branch[nb] ] = jsPlumb.connect({
+		  source: branchname,
+		  target: branch[nb],
+		  overlays: overlays,
+		  detachable: false
+		});
+	  }
+	  else{
+		// make connection, continue recursive branching
+		$.each(branch[nb], function(nextbranch){
+		  connections[ branchname + "-" + nextbranch ] = jsPlumb.connect({
+		    source: branchname,
+		    target: nextbranch,
+		    overlays: overlays,
+		    detachable: false
+  		  });
+	    });
+	    treeConnect( branch[nb] );
+ 	  }
+    }
+  });
+}
 
-			jsPlumb.connect({source:"getbizlicense2", target:"grandopening", overlays:overlays, detachable:false});
-			
-			//jsPlumb.draggable(jsPlumb.getSelector(".window"));
-		}
-	};
-	
-})();
+jQuery(document).ready(init);

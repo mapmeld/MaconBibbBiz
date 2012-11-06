@@ -8,35 +8,49 @@
     <link type="text/css" rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
     <script type='text/javascript' src='javascript/jquery.min.js'></script>
     <script type='text/javascript' src='javascript/jquery-ui.min.js'></script>
-    <script type='text/javascript' src='javascript/jquery.jsPlumb-1.3.13-all-min.js'></script>
+    <script type='text/javascript' src='javascript/jquery.jsPlumb-1.3.16-all-min.js'></script>
     <script type="text/javascript" src="javascript/chartDemo.js"></script>
-    <script type="text/javascript" src="javascript/demo-list.js"></script>
-    <script type="text/javascript" src="javascript/demo-helper-jquery.js"></script>
     <script type="text/javascript">
+function repaintConns(){
+  $.each(connections, function(cnct){
+    connections[cnct].repaint();
+  });
+}
 function confirmHomeOcc(){
   $("#homebased .btn").css({ display: "none" });
+  repaintConns();  
+  highlightPath( connections[ "homebased-homebasedfood" ] );	
 }
 function switchToMain(){
   $(".roadnottaken").removeClass("roadnottaken");
   $(".homeocc").addClass("roadnottaken");
+  repaintConns();
+  highlightPath( connections[ "startpoint-commercialbusiness" ] );
 }
 function confirmFood(){
   $(".food .btn").css({ display: "none" });
+  repaintConns();
 }
 function noFood(){
   $(".food").addClass("roadnottaken");
+  highlightPath( connections[ "homebased-homebasedzoningcompliance" ] );
+  repaintConns();
 }
 function confirmVariance(){
   $(".variance .btn").css({ display: "none" });
+  repaintConns();
 }
 function noVariance(){
   $(".variance").addClass("roadnottaken");
+  repaintConns();
 }
 function confirmSeptic(){
   $(".septic .btn").css({ display: "none" });
+  repaintConns();
 }
 function noSeptic(){
   $(".septic").addClass("roadnottaken");
+  repaintConns();
 }
     </script>
   </head>
@@ -68,7 +82,7 @@ function noSeptic(){
         </p>
         <p>If the applicant's name does not appear on the property card, written permission from the owner of record must be granted.</p>
       </div>
-      <div class="window homeocc food" id="homebasedbeautybarber">
+      <div class="window homeocc food" id="homebasedfood">
         <h4>Food Production?</h4>
         <p>
           <a class="btn btn-success" href="#" onclick="confirmFood()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
