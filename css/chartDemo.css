@@ -34,14 +34,14 @@
 .roadnottaken .btn-success{
   display: none;
 }
-#startpoint { left:25em;}
-#homebased { left:5em;top:16em;}
-#homebasedfood { left:20em;top:36em;}
-#homebasedzoningcompliance { left:5em;top:53em;}
+#startpoint { left:25em;top:-2.5em;}
+#homebased { left:5em;top:16.5em;}
+#homebasedfood { left:20em;top:37em;}
+#homebasedzoningcompliance { left:5em;top:54em;}
 #getfinallicense { left:17em;top:87em;}
 #grandopening { left:25em;top:114em;}
 
-#commercialbusiness{left:55em;top:14em;}
+#commercialbusiness{left:55em;top:14.5em;}
 #zoningvariance{left:45em;top:30em;}
 #foodandbeverage{left:68em;top:45em;}
 #returntopz{left:44em;top:67em;}
