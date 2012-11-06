@@ -34,9 +34,13 @@ function confirmFood(){
   highlightPath( connections[ "homebasedfood-homebasedzoningcompliance" ] );	
   repaintConns();
 }
-function noFood(){
+function noHomeFood(){
   $(".food").addClass("roadnottaken");
   highlightPath( connections[ "homebased-homebasedzoningcompliance" ] );
+  repaintConns();
+}
+function noFood(){
+  $(".food").addClass("roadnottaken");
   repaintConns();
 }
 function confirmVariance(){
@@ -63,7 +67,7 @@ function noSeptic(){
       <div class="navbar-inner">
         <div class="container">
           <a class="brand">
-            <strong>MaconBibbBiz</strong>
+            MaconBibbBiz
           </a>
         </div>
       </div>
@@ -87,67 +91,67 @@ function noSeptic(){
         <p>If the applicant's name does not appear on the property card, written permission from the owner of record must be granted.</p>
       </div>
       <div class="window homeocc food" id="homebasedfood">
-        <h4>Food Production?</h4>
+        <h4>Are you making food?</h4>
         <p>
           <a class="btn btn-success" href="javascript:void(0);" onclick="confirmFood()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
-          <a class="btn btn-danger" href="javascript:void(0);" onclick="noFood()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>
+          <a class="btn btn-danger" href="javascript:void(0);" onclick="noFoodHome()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>
         </p>
         <p><i class="icon-heart"></i>&nbsp;Get an inspection from the
-          <b>
+          
           <a href="http://northcentralhealthdistrict.com/dept.asp?id=2">
             Bibb County Health Department
           </a>
-          </b>.
+          .
         </p>
       </div>
       <div class="window homeocc" id="homebasedzoningcompliance">
         <h4>Planning &amp; Zoning Commission</h4>
         <p><i class="icon-briefcase"></i>&nbsp;File your
-          <b>
+          
           <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Home_Occupation_1.pdf">
             Home Occupation Application (PDF)
           </a>
-          </b> and any other forms with the
-          <b>
+           and any other forms with the
+          
           <a href="http://www.maconbibbpz.org">
             Planning &amp; Zoning Commission.
           </a>
-          </b>
+          
         </p>
       </div>
       <div class="window" id="getfinallicense">
         <h4>Business Licensing Department</h4>
         <p>Check if any
-          <b>
+          
           <a href="http://cityofmacon.net/finance-biz-licensetypes">
             City Licenses
           </a>
-          </b>
+          
           and / or
-          <b>
+          
           <a href="http://cityofmacon.net/finance-biz-license-fees">
             City License Fees
           </a>
-          </b>
+          
           apply to your business.
         </p>
         <p>If this is your business's first time getting a license, also file with <a href="http://sos.georgia.gov/">Georgia's Secretary of State</a>.</p>
         <p>Print and complete an
-          <b>
+          
           <a href="http://cityofmacon.net/sites/default/files/Finance/occupationtaxreturnform_doc_29670.doc">
             Occupational Tax Form (DOC)
           </a>
-          </b>.
-          Submit it with all forms to <b>
+          .
+          Submit it with all forms to 
           <a href="http://cityofmacon.net/ecdbbi-gts">
             City of Macon Finance Department
           </a>
-          </b>.
+          .
         </p>
       </div>
       <div class="window" id="grandopening">
         <h4>Grand Opening!</h4>
-        <p><i class="icon-music"></i>&nbsp;Once you have a business license from the <b>City of Macon</b>, you may officially open your doors!</p>
+        <p><i class="icon-music"></i>&nbsp;Once you have a business license from the City of Macon, you may officially open your doors!</p>
         <p><i class="icon-calendar"></i>&nbsp;Write a reminder to apply for a business license again next year.</p>
       </div>
       
@@ -159,7 +163,7 @@ function noSeptic(){
       <div class="window roadnottaken variance" id="zoningvariance">
         <h4>Zoning Variance?</h4>
         <p>
-          If your application requires a change in zoning, the <b>Planning &amp; Zoning Commission</b> will need to approve. Fill out a <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Variance_2.pdf">zoning variance form</a> and get placed on the Commission's agenda.
+          If your application requires a change in zoning, the Planning &amp; Zoning Commission will need to approve. Fill out a <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Variance_2.pdf">zoning variance form</a> and get placed on the Commission's agenda.
           <br/>
           <a class="btn btn-success" href="javascript:void(0);" onclick="confirmVariance()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
           <a class="btn btn-danger" href="javascript:void(0);" onclick="noVariance()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>          
@@ -180,13 +184,13 @@ function noSeptic(){
           <a class="btn btn-success" href="javascript:void(0);" onclick="confirmFood()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
           <a class="btn btn-danger" href="javascript:void(0);" onclick="noFood()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>
         </p>
-        <p><strong>Schedule Inspections</strong>
+        <p>Schedule Inspections
           <ul>
             <li><i class="icon-tint"></i>&nbsp;Macon Water Authority</li>
             <li><i class="icon-heart"></i>&nbsp;Bibb County Health Department</li>
           </ul>
         </p>
-        <p><strong><i class="icon-glass"></i>&nbsp;Alcohol License</strong>
+        <p><i class="icon-glass"></i>&nbsp;Alcohol License
           <ul>
             <li><a href="http://cityofmacon.net/sites/default/files/Finance/alcohol_beverage_application_doc_15245.doc">City of Macon</a></li>
             <li><a href="https://etax.dor.ga.gov/ctr/TSD_State_Alcohol_License_Application_CRF009.pdf">State of Georgia</a></li>
@@ -198,17 +202,17 @@ function noSeptic(){
         <h4>Planning & Zoning Commission</h4>
         <p>If you are constructing a building or pool, operating a day care, adding housing, or opening an adult business, go to <a href="http://www.maconbibbpz.org/artman2/publish/ZONING_FORMS/index.php">this page</a> and click 'next page' until you find applicable forms.</p>
         <p><i class="icon-briefcase"></i>&nbsp;Submit all inspection reports and forms with a
-          <b>
+          
           <a href="http://www.maconbibbpz.org/artman2/uploads/1/Application_for_Commercial_Industrial_or_Institutional_Use__1.pdf">
             Zoning Compliance Form
           </a>
-          </b>
+          
           to the
-          <b>
+          
           <a href="http://www.maconbibbpz.org">
             Planning &amp; Zoning Commission.
           </a>
-          </b>
+          
         </p>
       </div>
     </div>

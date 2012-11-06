@@ -20,6 +20,9 @@
 .window ul{
   text-align: left;
 }
+.window a{
+  font-weight: bold;
+}
 .roadnottaken{
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"
   filter:alpha(opacity=30);
