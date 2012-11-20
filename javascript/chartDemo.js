@@ -61,6 +61,7 @@ function restoreFromCookie( cookie ){
         noSeptic();
       }
     }
+    $('#savemessage').avgrund();
   }
 }
 function init(){
