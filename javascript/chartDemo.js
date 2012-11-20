@@ -1,4 +1,75 @@
+function setCookie(c_name,value,exdays){
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate() + exdays);
+  var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+  document.cookie=c_name + "=" + c_value;
+}
+function getCookie(c_name){
+  var i,x,y,ARRcookies=document.cookie.split(";");
+  for(i=0;i<ARRcookies.length;i++){
+    x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+    y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+    x=x.replace(/^\s+|\s+$/g,"");
+    if(x==c_name){
+      return unescape(y);
+    }
+  }
+}
+function restoreFromCookie( cookie ){
+  if(!cookie){
+    // show intro message
+  }
+  else{
+    // really restore from cookies
+    if(typeof getCookie("homeocc") != "undefined"){
+      if(getCookie("homeocc") == "yes"){
+        confirmHomeOcc();
+      }
+      else{
+        switchToMain();
+      }
+    }
+    if(typeof getCookie("homefood") != "undefined"){
+      if(getCookie("homefood") == "yes"){
+        confirmFoodHome();
+      }
+      else{
+        noFoodHome();
+      }
+    }
+    if(typeof getCookie("food") != "undefined"){
+      if(getCookie("food") == "yes"){
+        confirmFood();
+      }
+      else{
+        noFood();
+      }
+    }
+    if(typeof getCookie("variance") != "undefined"){
+      if(getCookie("variance") == "yes"){
+        confirmVariance();
+      }
+      else{
+        noVariance();
+      }
+    }
+    if(typeof getCookie("septic") != "undefined"){
+      if(getCookie("septic") == "yes"){
+        confirmSeptic();
+      }
+      else{
+        noSeptic();
+      }
+    }
+  }
+}
 function init(){
+  if(typeof getCookie("maconbibb") != "undefined"){
+    restoreFromCookie( getCookie("maconbibb") );
+  }
+  else{
+    restoreFromCookie( false );
+  }
   var color = "gray";
   jsPlumb.importDefaults({
 	Connector : [ "StateMachine", { stub:30, gap: 0 } ],

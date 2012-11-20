@@ -22,42 +22,67 @@ function confirmHomeOcc(){
   $("#homebased .btn").css({ display: "none" });
   repaintConns();  
   highlightPath( connections[ "homebased-homebasedfood" ] );	
+  setCookie("maconbibb", "save", 30);
+  setCookie("homeocc", "yes", 30);
 }
 function switchToMain(){
   $(".roadnottaken").removeClass("roadnottaken");
   $(".homeocc").addClass("roadnottaken");
   repaintConns();
   highlightPath( connections[ "startpoint-commercialbusiness" ] );
+  setCookie("maconbibb", "save", 30);
+  setCookie("homeocc", "no", 30);
 }
 function confirmFood(){
   $(".food .btn").css({ display: "none" });
   highlightPath( connections[ "homebasedfood-homebasedzoningcompliance" ] );	
   repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("homefood", "yes", 30);
+}
+function confirmFoodHome(){
+  $(".food .btn").css({ display: "none" });
+  highlightPath( connections[ "homebasedfood-homebasedzoningcompliance" ] );	
+  repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("homefood", "yes", 30);
 }
 function noFoodHome(){
   $(".food").addClass("roadnottaken");
   highlightPath( connections[ "homebased-homebasedzoningcompliance" ] );
   repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("homefood", "no", 30);
 }
 function noFood(){
   $(".food").addClass("roadnottaken");
   repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("food", "no", 30);
 }
 function confirmVariance(){
   $(".variance .btn").css({ display: "none" });
   repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("variance", "yes", 30);
 }
 function noVariance(){
   $(".variance").addClass("roadnottaken");
   repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("variance", "no", 30);
 }
 function confirmSeptic(){
   $(".septic .btn").css({ display: "none" });
   repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("septic", "yes", 30);
 }
 function noSeptic(){
   $(".septic").addClass("roadnottaken");
   repaintConns();
+  setCookie("maconbibb", "save", 30);
+  setCookie("septic", "no", 30);
 }
     </script>
   </head>
@@ -93,7 +118,7 @@ function noSeptic(){
       <div class="window homeocc food" id="homebasedfood">
         <h4>Are you making food?</h4>
         <p>
-          <a class="btn btn-success" href="javascript:void(0);" onclick="confirmFood()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
+          <a class="btn btn-success" href="javascript:void(0);" onclick="confirmFoodHome()"><i class="icon-ok icon-white"></i>&nbsp;Confirm</a>
           <a class="btn btn-danger" href="javascript:void(0);" onclick="noFoodHome()"><i class="icon-ban-circle icon-white"></i>&nbsp;Not me</a>
         </p>
         <p><i class="icon-heart"></i>&nbsp;Get an inspection from the
