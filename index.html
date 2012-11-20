@@ -7,11 +7,10 @@
     <link type="text/css" rel="stylesheet" href="css/jsPlumbDemo.css">
     <link type="text/css" rel="stylesheet" href="css/chartDemo.css">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css"/>
-    <link type="text/css" rel="stylesheet" href="css/avgrund.css"/>
     <script type='text/javascript' src='javascript/jquery.min.js'></script>
     <script type='text/javascript' src='javascript/jquery-ui.min.js'></script>
     <script type='text/javascript' src='javascript/jquery.jsPlumb-1.3.16-all-min.js'></script>
-    <script type='text/javascript' src='javascript/jquery.avgrund.js'></script>
+    <script type='text/javascript' src='javascript/bootstrap.min.js'></script>
     <script type="text/javascript" src="javascript/chartDemo.js"></script>
     <script type="text/javascript">
 function repaintConns(){
@@ -260,7 +259,21 @@ function noSeptic(){
         </p>
       </div>
     </div>
-    <div style="display:none;">
+
+<div id="savemessage" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Welcome back!</h3>
+  </div>
+  <div class="modal-body">
+    <p>Your choices are saved for 30 days.</p>
+    <p><a href="#" class="btn" onclick="resetCookies();">Click here</a> to start over.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Resume</a>
+  </div>
+</div>
+
     	<div id="savemessage">
     		<h3>Welcome back!</h3>
     		<p>Your choices are saved for 30 days.</p>
