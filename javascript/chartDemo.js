@@ -50,7 +50,7 @@ function restoreFromCookie( cookie ){
       if(getCookie("variance") == "yes"){
         confirmVariance();
       }
-      else if(getCookie("variance") == "no"){{
+      else if(getCookie("variance") == "no"){
         noVariance();
       }
     }
