@@ -64,12 +64,6 @@ function restoreFromCookie( cookie ){
   }
 }
 function init(){
-  if(typeof getCookie("maconbibb") != "undefined"){
-    restoreFromCookie( getCookie("maconbibb") );
-  }
-  else{
-    restoreFromCookie( false );
-  }
   var color = "gray";
   jsPlumb.importDefaults({
 	Connector : [ "StateMachine", { stub:30, gap: 0 } ],
@@ -117,7 +111,14 @@ function init(){
   };
 
   treeConnect(decisionTree);
-  highlightPath( connections[ "startpoint-homebased" ] );			
+  highlightPath( connections[ "startpoint-homebased" ] );
+
+  if(typeof getCookie("maconbibb") != "undefined"){
+    restoreFromCookie( getCookie("maconbibb") );
+  }
+  else{
+    restoreFromCookie( false );
+  }		
 }
 
 var isHighlighted = null;
