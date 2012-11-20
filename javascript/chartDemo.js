@@ -26,7 +26,7 @@ function restoreFromCookie( cookie ){
       if(getCookie("homeocc") == "yes"){
         confirmHomeOcc();
       }
-      else{
+      else if(getCookie("homeocc") == "no"){
         switchToMain();
       }
     }
@@ -34,7 +34,7 @@ function restoreFromCookie( cookie ){
       if(getCookie("homefood") == "yes"){
         confirmFoodHome();
       }
-      else{
+      else if(getCookie("homefood") == "no"){
         noFoodHome();
       }
     }
@@ -42,7 +42,7 @@ function restoreFromCookie( cookie ){
       if(getCookie("food") == "yes"){
         confirmFood();
       }
-      else{
+      else if(getCookie("food") == "no"){
         noFood();
       }
     }
@@ -50,7 +50,7 @@ function restoreFromCookie( cookie ){
       if(getCookie("variance") == "yes"){
         confirmVariance();
       }
-      else{
+      else if(getCookie("variance") == "no"){{
         noVariance();
       }
     }
@@ -58,7 +58,7 @@ function restoreFromCookie( cookie ){
       if(getCookie("septic") == "yes"){
         confirmSeptic();
       }
-      else{
+      else if(getCookie("septic") == "no"){
         noSeptic();
       }
     }
