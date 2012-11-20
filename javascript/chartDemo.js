@@ -18,6 +18,7 @@ function getCookie(c_name){
 function restoreFromCookie( cookie ){
   if(!cookie){
     // show intro message
+    $('#openmessage').modal();
   }
   else{
     // really restore from cookies
@@ -63,6 +64,16 @@ function restoreFromCookie( cookie ){
     }
     $('#savemessage').modal();
   }
+}
+function resetCookies(){
+  setCookie("maconbibb", "", 30);
+  setCookie("homeocc", "", 30);
+  setCookie("homefood", "", 30);
+  setCookie("food", "", 30);
+  setCookie("variance", "", 30);
+  setCookie("septic", "", 30);
+  $('#savemessage').modal('toggle');
+  document.location.reload(true);
 }
 function init(){
   var color = "gray";
@@ -114,7 +125,7 @@ function init(){
   treeConnect(decisionTree);
   highlightPath( connections[ "startpoint-homebased" ] );
 
-  if(typeof getCookie("maconbibb") != "undefined"){
+  if(typeof getCookie("maconbibb") != "undefined" && getCookie("maconbibb") == "save"){
     restoreFromCookie( getCookie("maconbibb") );
   }
   else{

@@ -266,14 +266,35 @@ function noSeptic(){
     <h3>Welcome back!</h3>
   </div>
   <div class="modal-body">
+    <p>MaconBibb.biz helps walk you through the business licensing process.</p>
     <p>Your choices are saved for 30 days.</p>
-    <p><a href="#" class="btn" onclick="resetCookies();">Click here</a> to start over.</p>
   </div>
   <div class="modal-footer">
-    <a href="#" data-dismiss="modal" class="btn">Resume</a>
+    <a href="#" class="btn" onclick="resetCookies();">Start Over</a>
+    <a href="#" onclick="$('#savemessage').modal('toggle');" class="btn btn-primary">Resume</a>
   </div>
 </div>
 
+<div id="openmessage" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>This is MaconBibb.biz!</h3>
+  </div>
+  <div class="modal-body">
+    <p>This site helps walk you through the business licensing process.</p>
+    <p>Your choices are saved for 30 days.</p>
+    <p>You can also get help from these sites:
+      <ul>
+        <li>Main Street Macon</li>
+        <li>Urban Development Authority</li>
+        <li>Planning and Zoning</li>
+      </ul>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" onclick="$('#savemessage').modal('toggle');" class="btn btn-primary">Start</a>
+  </div>
+</div>
     	<div id="savemessage">
     		<h3>Welcome back!</h3>
     		<p>Your choices are saved for 30 days.</p>
