@@ -271,7 +271,7 @@ function noSeptic(){
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" onclick="resetCookies();">Start Over</a>
-    <a href="#" onclick="$('#savemessage').modal('toggle').css({'display':'none'});" class="btn btn-primary">Resume</a>
+    <a href="#" onclick="$('#savemessage').modal('toggle');" class="btn">Resume</a>
   </div>
 </div>
 
@@ -292,14 +292,10 @@ function noSeptic(){
     </p>
   </div>
   <div class="modal-footer">
-    <a href="#" onclick="$('#openmessage').modal('toggle').css({'display':'none'});" class="btn btn-primary">Start</a>
+    <a href="#" onclick="$('#savemessage').modal('toggle');" class="btn btn-primary">Start</a>
   </div>
 </div>
-    	<div id="savemessage">
-    		<h3>Welcome back!</h3>
-    		<p>Your choices are saved for 30 days.</p>
-    		<p><a href="#" class="btn" onclick="resetCookies();">Click here</a> to start over.</p>
-    	</div>
+
     </div>
     <script type="text/javascript">
 var _gaq = _gaq || [];
