@@ -260,21 +260,6 @@ function noSeptic(){
       </div>
     </div>
 
-<div id="savemessage" class="modal hide fade">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>Welcome back!</h3>
-  </div>
-  <div class="modal-body">
-    <p>MaconBibb.biz helps walk you through the business licensing process.</p>
-    <p>Your choices are saved for 30 days.</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn" onclick="resetCookies();">Start Over</a>
-    <a href="#" onclick="$('#savemessage').modal('toggle');" class="btn">Resume</a>
-  </div>
-</div>
-
 <div id="openmessage" class="modal hide fade">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -292,7 +277,22 @@ function noSeptic(){
     </p>
   </div>
   <div class="modal-footer">
-    <a href="#" onclick="$('#savemessage').modal('toggle');" class="btn btn-primary">Start</a>
+    <a href="#" onclick="$('#openmessage').modal('toggle');" class="btn btn-primary">Start</a>
+  </div>
+</div>
+
+<div id="savemessage" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Welcome back!</h3>
+  </div>
+  <div class="modal-body">
+    <p>MaconBibb.biz helps walk you through the business licensing process.</p>
+    <p>Your choices are saved for 30 days.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" onclick="resetCookies();">Start Over</a>
+    <a href="#" onclick="$('#savemessage').modal('toggle');" class="btn btn-primary">Resume</a>
   </div>
 </div>
 
