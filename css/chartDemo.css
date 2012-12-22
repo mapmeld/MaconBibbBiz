@@ -23,6 +23,12 @@
 .window a{
   font-weight: bold;
 }
+.illustrates{
+  float: left;
+  margin: 10px;
+  margin-right: 40px;
+  width: 140px;
+}
 .roadnottaken{
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"
   filter:alpha(opacity=30);

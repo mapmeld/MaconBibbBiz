@@ -125,6 +125,9 @@ function init(){
   treeConnect(decisionTree);
   highlightPath( connections[ "startpoint-homebased" ] );
 
+  // random image in popup
+  var sideimgs = [ "macon1.jpg", "macon2.jpg", "macon3.jpg", "macon4.jpg", "macon5.jpg", "macon6.jpg", "macon7.jpg", "macon8.jpg", "macon9.jpg" ];
+  $(".illustrates").attr("src", "img/" + sideimgs[ Math.floor(sideimgs.length * Math.random()) ]);
   if(typeof getCookie("maconbibb") != "undefined" && getCookie("maconbibb") == "save"){
     restoreFromCookie( getCookie("maconbibb") );
   }
@@ -146,11 +149,14 @@ function highlightPath(connector){
 
 var connections = { };
 var color = "gray";
-
-			var arrowCommon = { foldback:0.7, fillStyle:color, width:14 };
-				var overlays = [
-					[ "Arrow", { location:0.5 }, arrowCommon ]
-				];
+var arrowCommon = {
+  foldback: 0.7,
+  fillStyle: color,
+  width: 14
+};
+var overlays = [
+  [ "Arrow", { location:0.5 }, arrowCommon ]
+];
 
 function treeConnect(tree){
 
